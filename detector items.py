@@ -37,8 +37,7 @@ def ventanas():
             break
     cv2.destroyAllWindows()
 
-
-cuenta()
+    
 texto()
 ventanas()
 
