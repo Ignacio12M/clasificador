@@ -4,8 +4,8 @@ import numpy as np
 
 img =  cv2.imread('WIN_20161115_11_14_43_Pro.jpg')
 #tratamiento de imagen
-imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)     #transforma la imajen en escala de grises
-ret,thresh = cv2.threshold(imgGray,127,255,0)      #
+imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)     #transforma la imagen en escala de grises
+ret,thresh = cv2.threshold(imgGray,127,255,0)      
 image, contours, hierarchy = cv2.findContours(thresh,1,2)
 
 cadena_text = ["item ",["1","2","3","4","5","6","7","8","9"]]
