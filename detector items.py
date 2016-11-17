@@ -8,7 +8,7 @@ imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)     #transforma la imagen en esca
 ret,thresh = cv2.threshold(imgGray,127,255,0)      
 image, contours, hierarchy = cv2.findContours(thresh,1,2)
 
-cadena_text = ["item ",["1","2","3","4","5","6","7","8","9"]]
+cadena_text = ["item ",["1","2","3","4","5","6","7","8","9"]] # Esto no se deberia hacer, ya que no conoces el numero exacto de items
 
 def cuenta(items=0):
     point= {}
@@ -23,8 +23,11 @@ def cuenta(items=0):
 
 def texto():
     pos = cuenta()
+    items = "items"
+    contador = 1
     for i in pos:
-        cv2.putText(img, cadena_text[0] + cadena_text[1][i] , (pos[i][0],pos[i][1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (11, 255, 255), 1, cv2.LINE_AA)
+        cv2.putText(img, items + contador , (pos[i][0],pos[i][1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (11, 255, 255), 1, cv2.LINE_AA)
+        contador += 1
 
 
 def ventanas():
